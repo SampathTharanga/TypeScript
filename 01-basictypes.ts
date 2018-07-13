@@ -134,4 +134,40 @@ let n: null = null;
 
 
 //---------------- 10 - Never ----------------
-//function returing 
+//Function returing never must have unreachable end point
+function error (message: string) : never {
+    throw new  Error(message);
+}
+
+//Inferred return type is never
+function fail() {
+    return error("Something failed");
+}
+
+//Function returning never must have unreachable end point
+function infiniteLoop(): never {
+    while (true)
+    {
+
+    }
+}
+
+//---------------- 11 - Object ----------------
+/*
+declare function create(o: object | null) : void;
+
+create({ prop: 0 }); //Ok
+create(null); //Ok
+
+create(42); //Error
+create("string"); //Error
+create(false); //Error
+create(undefined); //Error
+*/
+
+//---------------- 11 - Type assertions ----------------
+//Type assertions are a way to tell the compiler "trust me, I know what I'm doing."
+//Type assertios have two forms.
+let someValue: any = "this is a string";
+let strLength: number = (<string>someValue).length;
+console.log("String length : " + strLength);
