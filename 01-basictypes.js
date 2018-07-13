@@ -149,6 +149,12 @@ create(undefined); //Error
 //---------------- 11 - Type assertions ----------------
 //Type assertions are a way to tell the compiler "trust me, I know what I'm doing."
 //Type assertios have two forms.
+//Form 01
 var someValue = "this is a string";
 var strLength = someValue.length;
 console.log("String length : " + strLength);
+//Form 02 : use "as" syntax
+// When using TypeScript with JSX, only "as" style assertions are allowed.
+var someValue1 = "this is a string";
+var strLength1 = someValue1.length;
+console.log("String length : " + strLength1);
