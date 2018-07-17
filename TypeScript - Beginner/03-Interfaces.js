@@ -1,4 +1,9 @@
 /**
+ *
+ *  We can also use the --watch option to automatically compile a TypeScript file when changes are made:
+ *
+ *
+ *
  *    RESORCES:
  *      https://www.typescriptlang.org/docs/handbook/interfaces.html
  */
@@ -37,7 +42,38 @@ var ro = a2;
 //On the last line of the snippet you can see that even assigning the entire ReadonlyArray back to a normal array is illegal.
 //You can still override it with a type assertion, though:
 a2 = ro;
-/**
- *      readonly vs const
- */
-//Variables use const whereas properties use readonly.
+/*
+ let mySearch: SearchFunc;
+ mySearch = function(source: string, subString: string) {
+     let result = source.search(subString);
+     return result > -1;
+ }
+
+let mySearch: SearchFunc;
+mySearch = function(source: string, subString: string): boolean {
+    let result = source.search(subString);
+    return result > -1;
+}
+*/
+var mySearch;
+mySearch = function (src, sub) {
+    var result = src.search(sub);
+    return result > -1;
+};
+var myArray;
+myArray = ["Bob", "Fred"];
+var myStr = myArray[0];
+/*
+class Animal{
+    name: string;
+}
+class Dog extends Animal {
+    breed: string;
+}
+
+//Error: indexing with a numeric  string might get you a completely separeate type of Animal!
+interface NotOkay {
+    [x: number]: Animal;
+    [x: string]: Dog;
+}
+*/
