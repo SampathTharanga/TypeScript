@@ -281,3 +281,45 @@ function keepWholeObject (wholeObject: { a: string, b?:number} ) {
     let { a, b = 1001 } = wholeObject;
 }
 
+//Function declaration
+type c = { a: string, b?:number }
+function ff ({a, b}: c): void {
+    //...
+}
+
+function ff1({ a, b } = { a: "", b: 0 }): void {
+    //...
+}
+ff1(); //ok default to { a: "", b: 0 }
+
+function ff2({ a, b = 0 } = { a: "" }): void {
+    //...
+}
+ff2({ a: "yes" }); //ok, default b = 0
+ff2(); // ok default to { a: "" }, which then default b = 0
+//ff2({}); // error, 'a' is required if you supply an argument.
+
+/*
+        Spread
+*/
+//Array spread
+let first2 = [1 ,2];
+let second2 = [3, 4];
+let bothPlus = [0, ...first2, ...second2, 5]; // values are [0, 1, 2, 3, 4, 5]
+
+//Object spread
+let defaults = { food: "spicy", price: "$$", ambiance: "noisy" };
+let search = { ...defaults, food: "rich" };
+
+let defaults1 = { food: "spicy", price: "$$", ambince: "noisy" };
+let search1 = { food: "rich", ...defaults1 };
+
+class Cls {
+    p = 12;
+    m() {
+    }
+}
+let _Cls = new Cls();
+let clone = { ..._Cls }
+clone.p; // ok
+//clone.m(); // error
