@@ -255,3 +255,29 @@ let input1 = [1, 2];
 let [first, second] = input1;
 console.log(first);  //Output 1
 console.log(second); //Output 2
+
+
+//You can create a variable for the remaining items in a list using the syntax ...
+let [first1, ...rest] = [1, 2, 3, 4, 5];
+console.log(first); //Output 1
+console.log(rest); //Output [2, 3, 4, 5]
+
+/*
+        Object Destructuring
+*/
+let o1 = {
+    a1: "foo",
+    b1: 12,
+    c1: "bar"
+};
+
+let { a1, b1 } = o1;
+
+//Property renaming
+let { a1: newame1, b1: newName2 } = o1;
+
+//Default Values
+function keepWholeObject (wholeObject: { a: string, b?:number} ) {
+    let { a, b = 1001 } = wholeObject;
+}
+
