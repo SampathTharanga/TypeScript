@@ -71,3 +71,23 @@ a2 = ro as number[];
  *      readonly vs const
  */
 //Variables use const whereas properties use readonly.
+
+
+/*
+    Excess Property Checks
+*/
+/*
+interface SquareConfig1{
+    color?: string;
+    width?: number;
+}
+
+function createSquare1(config1: SquareConfig1): { color: string; area: number } {
+
+    //...
+}
+
+let mySquare1 = createSquare1({ colour: "red", with:100 }); // error: 'colour' not expected in type 'SquareConfig'
+
+let mySquare1 = createSqure1({ width: 100, opacity: 0.5 } as SquareConfig1 );
+*/
