@@ -63,17 +63,44 @@ mySearch = function (src, sub) {
 var myArray;
 myArray = ["Bob", "Fred"];
 var myStr = myArray[0];
+var myArray1 = ["Alice", "Bob"];
+//myArray1[2] = "Mallory"; //error!
+/**
+ *          Class Types
+ */
+// Implementing an interface
 /*
-class Animal{
-    name: string;
-}
-class Dog extends Animal {
-    breed: string;
+interface ClockInterface {
+    currentTime: Date;
 }
 
-//Error: indexing with a numeric  string might get you a completely separeate type of Animal!
-interface NotOkay {
-    [x: number]: Animal;
-    [x: string]: Dog;
+class Clock implements ClockInterface {
+    currentTime: Date;
+    constructor(h: number, m: number) { }
+}
+*/
+/*
+interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date);
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+    constructor(h: number, m: number) { }
+}
+*/
+//Diffrent between the static and instance of Class
+/*
+interface ClockConstructor {
+    new (hour: number, minute: number);
+}
+
+class Clock implements ClockConstructor {
+    currentTime: Date;
+    constructor(h: number, m: number) { }
 }
 */

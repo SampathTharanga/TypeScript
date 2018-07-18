@@ -152,3 +152,62 @@ interface NotOkay {
     [x: string]: Dog;
 }
 */
+
+/*
+interface NumberDictionary {
+    [index: string]: number;
+    length: number;  // ok, length is a number
+    name: string;    // error, the type of 'name' is not a subtype of the indexer
+}
+*/
+
+
+interface ReadonlyStringArray{
+    readonly [index: number]: string;
+}
+let myArray1: ReadonlyStringArray = ["Alice", "Bob"];
+//myArray1[2] = "Mallory"; //error!
+
+
+/**
+ *          Class Types
+ */
+// Implementing an interface
+
+/*
+interface ClockInterface {
+    currentTime: Date;
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    constructor(h: number, m: number) { }
+}
+*/
+
+/*
+interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date);
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+    constructor(h: number, m: number) { }
+}
+*/
+
+//Diffrent between the static and instance of Class
+/*
+interface ClockConstructor {
+    new (hour: number, minute: number);
+}
+
+class Clock implements ClockConstructor {
+    currentTime: Date;
+    constructor(h: number, m: number) { }
+}
+*/
